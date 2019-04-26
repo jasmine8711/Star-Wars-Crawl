@@ -1,0 +1,115 @@
+body{
+    width: 100%;
+    height: 100%;
+    background:black;
+    perspective: 100px;
+    transform-style: preserve-3d;
+    font-family: 'Bitter', serif;
+    animation: bganimate 4s;
+    animation-delay: 6s;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* typewrite */
+.type{
+    width: 42rem;
+    color: rgb(6, 186, 231);
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    top: 10rem;
+    border-right: 2px solid rgb(6, 186, 231);
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+.anim{
+    animation: 
+    move 5s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+@keyframes move{
+    0%{
+        width: 0;
+        
+    }
+    90%{
+        width: 42rem;
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+   
+}
+@keyframes blinkTextCursor{
+    from{
+        border-right: 2px solid rgb(6, 186, 231);
+    }
+    to{
+        border-right: transparent;
+    }
+}
+
+.type p{
+    margin: 0;
+    padding: 0;
+}
+
+/* logo */
+img{
+    width: 100%;
+    height: 100%;
+    animation: logochange 5s 1;
+    animation-delay: 6s;
+    opacity: 0;
+}
+@keyframes logochange{
+    0%{
+        opacity:0
+    }
+    5%{
+        opacity: 1;
+        width: 300%;
+    }
+    100%{
+        width: 0;
+        opacity: 1;
+    }
+
+}
+
+
+/* star wars crawl */
+
+.text{
+    margin: 10% 20% ;
+    color: yellow;
+    font-size: 1rem;
+    text-align:center;
+    perspective-origin: 50% 50%;
+    animation: animate 15s linear;
+    animation-delay: 10s;
+    transform: rotateX(60deg) translateY(100px);
+    opacity: 0;
+}
+@keyframes animate{
+   
+    from{
+        opacity: 1;
+        transform: rotateX(60deg) translateY(100px);
+    }
+    to{ 
+        opacity: 1;
+        transform: rotateX(60deg) translateY(0px);
+        }
+    }
+h2{
+    text-align: center;
+}
+
+
