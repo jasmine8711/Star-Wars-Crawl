@@ -1,31 +1,39 @@
 body{
-    width: 100%;
-    height: 100%;
+    width: 1920px;
+    height: 1080px;
     background:black;
-    perspective: 100px;
-    transform-style: preserve-3d;
-    font-family: 'Bitter', serif;
-    animation: bganimate 4s;
-    animation-delay: 6s;
+    font-family: 'Bitter', serif;/*  */
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    margin-top: 0;
+    perspective: 200px;
+    transform-style: preserve-3d;
 }
-
-
+.bgvideo{
+    margin:0 ;
+    position:fixed;
+    z-index: -1;
+}
 /* typewrite */
 .type{
-    width: 42rem;
-    color: rgb(6, 186, 231);
-    font-size: 2rem;
-    margin: 0 auto;
-    padding: 0;
     position: relative;
+    top: 50%;
+    left: 20%;
+    width: 42rem;
+    color: rgb(1, 238, 255);
+    font-size: 2rem;
+    padding: 0;
     z-index: 1;
     top: 10rem;
-    border-right: 2px solid rgb(6, 186, 231);
+    border-right: 2px solid rgb(1, 238, 255);
     white-space: nowrap;
     overflow: hidden;
     transform: translateY(-50%);
+   
+}
+.type p{
+    text-align: center;
 }
 .anim{
     animation: 
@@ -58,58 +66,68 @@ body{
 .type p{
     margin: 0;
     padding: 0;
-}
+} 
 
 /* logo */
+
 img{
-    width: 100%;
-    height: 100%;
-    animation: logochange 5s 1;
-    animation-delay: 6s;
+    margin:0 auto;
+    position: relative;
+    top: 5rem;
+    left: 20rem;
+    animation: logochange 12s linear forwards 1;
+    animation-delay: 7s; 
     opacity: 0;
+    
 }
-@keyframes logochange{
+ @keyframes logochange{
     0%{
-        opacity:0
+        opacity:0;
+        transform-origin: center;
+        transform: scale(2);
     }
-    5%{
+    2%{
         opacity: 1;
-        width: 300%;
+        transform-origin: center;
+        transform: scale(1.5) rotateX(0);
+    }
+    80%{
+        transform: scale(0.5) rotateX(0);
+        opacity: 1;
     }
     100%{
-        width: 0;
-        opacity: 1;
+        transform: scale(0) translateX(0);
+        opacity: 0;
     }
-
-}
+} 
 
 
 /* star wars crawl */
-
-.text{
-    margin: 10% 20% ;
-    color: yellow;
-    font-size: 1rem;
-    text-align:center;
-    perspective-origin: 50% 50%;
-    animation: animate 15s linear;
-    animation-delay: 10s;
-    transform: rotateX(60deg) translateY(100px);
-    opacity: 0;
-}
-@keyframes animate{
-   
-    from{
-        opacity: 1;
-        transform: rotateX(60deg) translateY(100px);
-    }
-    to{ 
-        opacity: 1;
-        transform: rotateX(60deg) translateY(0px);
-        }
-    }
 h2{
     text-align: center;
 }
+
+.text{
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    color:rgb(1, 238, 255);
+    font-size: 1rem;
+    text-align:center;
+    position: fixed;
+   
+    transform: rotateX(20deg) translateY(600px);
+    animation: animate 14s ease-out 1;
+    animation-delay: 11s;
+}
+
+@keyframes animate{
+
+    from { transform: rotateX(20deg) translateY(600px); }
+    to { transform: rotateX(20deg) translateY(-400px); }
+}
+  
+
 
 
